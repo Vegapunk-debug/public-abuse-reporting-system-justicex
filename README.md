@@ -45,11 +45,11 @@ Follow these steps to set up the project locally.
 
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/Vegapunk-debug/public-abuse-reporting-system-justiceX.git](https://github.com/Vegapunk-debug/public-abuse-reporting-system-justiceX.git)
+    git clone https://github.com/Vegapunk-debug/public-abuse-reporting-system-justiceX.git
     cd public-abuse-reporting-system-justiceX
     ```
 
-2.  **Install dependencies (Root, Client, and Server)**
+2.  **Install Dependencies**
     ```bash
     # Install server dependencies
     cd server
@@ -61,23 +61,25 @@ Follow these steps to set up the project locally.
     ```
 
 3.  **Environment Variables**
-    Create a `.env` file in the `server` directory and add the following:
+    Create a `.env` file in the `server` directory:
     ```env
     PORT=5000
     MONGO_URI=your_mongodb_connection_string
     JWT_SECRET=your_jwt_secret
-    CLOUDINARY_CLOUD_NAME=your_cloud_name
-    CLOUDINARY_API_KEY=your_key
     ```
 
 4.  **Run the application**
     ```bash
-    # Run Backend (from server dir)
+    # Run Backend
+    cd server
     npm run dev
 
-    # Run Frontend (from client dir)
+    # Run Frontend
+    cd client
     npm start
     ```
+
+---
 
 ---
 
@@ -98,8 +100,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-**Project Lead:** [Your Name]
-**LinkedIn:** [Your LinkedIn Profile URL]
-**Email:** [Your Email Address]
+**Project Lead:** Rohit Nair P
+**LinkedIn:** https://www.linkedin.com/in/rohit-nair-p-7a535b251/
+**Email:** rohitnairmuttathethu@gmail.com
 
 Project Link: [https://github.com/Vegapunk-debug/public-abuse-reporting-system-justiceX](https://github.com/Vegapunk-debug/public-abuse-reporting-system-justiceX)
