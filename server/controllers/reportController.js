@@ -1,5 +1,10 @@
 const Report = require("../models/Report")
 
+const generateReportId = () => {
+  const randomNum = Math.floor(100000 + Math.random() * 900000)
+  return `JX-${randomNum}`
+}
+
 exports.addReport = async (req, res) => {
   try {
 
@@ -17,21 +22,27 @@ exports.addReport = async (req, res) => {
     if (latitude && longitude) {
       locationData.coordinates = [parseFloat(longitude), parseFloat(latitude)]
     }
+    const safeId = generateReportId()
 
     const newReport = new Report({
+        reportId: safeId,
         title, 
         category, 
         description, 
         location: locationData, 
         incidentDate, anonymous, 
-        contact: anonymous ? null : contact})
+        contact: anonymous ? null : contact,
+        status: "Pending"
+})
+        
 
     await newReport.save()
+    console.log("Report Saved:", newReport._id);
 
     res.status(201).json({ 
       success: true, 
       message: "Report added successfully", 
-      reportId: newReport._id 
+      reportId: safeId
     })
 
   } catch (error) {
@@ -54,6 +65,27 @@ exports.getReport = async (req, res) => {
       success: false, 
       message: "Server Error: Could not fetch reports (Try Again)" 
     })
+  }
+}
+
+exports.getReportStatus = async (req, res) => {
+  try {
+    const { id } = req.params
+
+    const report = await Report.findOne({reportId: id})
+
+    if (!report) {
+      return res.status(404).json({ error: "Report not found" })
+    }
+
+    res.status(200).json({ 
+      id: report.reportId,
+      title: report.title,
+      status: report.status,
+      updatedAt: report.createdAt 
+    })
+  } catch (error) {
+    res.status(500).json({ error: "Invalid Report ID" })
   }
 }
 

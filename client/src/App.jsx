@@ -9,6 +9,7 @@ import Gallery from './pages/Gallery';
 import About from './pages/About';
 import Login from './pages/Login';
 import ReportForm from './pages/ReportForm';
+import TrackStatus from './pages/TrackStatus';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/report" element={<ReportForm />} />
 
           <Route path="/reports" element={<Reports />} />
+          <Route path="/track-status" element={<TrackStatus />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/about" element={<About />} />

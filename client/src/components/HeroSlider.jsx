@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const slides = [
   {
@@ -41,8 +42,9 @@ const slides = [
   },
 ];
 
-export default function HeroSlider({ onReportClick, onHowItWorksClick }) {
-  
+export default function HeroSlider({ onHowItWorksClick }) {
+  const navigate = useNavigate()
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const goToPrev = () =>
@@ -73,7 +75,7 @@ export default function HeroSlider({ onReportClick, onHowItWorksClick }) {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={onReportClick}
+              onClick={() => navigate('/report')}
               className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white text-base font-semibold px-6 py-3 rounded-lg transition duration-200 shadow-sm">
               <i className="ri-file-list-3-line mr-2 text-lg"></i>
               Register a Complaint

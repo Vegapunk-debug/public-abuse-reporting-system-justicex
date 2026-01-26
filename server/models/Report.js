@@ -1,6 +1,11 @@
 const mongoose = require("mongoose");
 
 const ReportSchema = new mongoose.Schema({
+    reportId: { 
+    type: String, 
+    unique: true,
+    required: true 
+  },
     title: {
         type: String,
         required: [true, 'Please add a title'],
