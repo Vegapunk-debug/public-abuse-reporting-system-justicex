@@ -15,11 +15,11 @@ app.use(cors({
 
 app.use(express.json())
 
+app.use('/api/reports', reportRouter)
 
-
-app.get("/", (req, res) => {
-    res.send("JusticeX API is running...")
-})
+// app.get("/", (req, res) => {
+//     res.send("JusticeX API is running...")
+// })
 
 
 const serverConnection = async() => {
