@@ -20,28 +20,29 @@ const slides = [
     description:
       'Your voice matters. Report crime and abuse securely — empower change in your society.',
     image: 'https://images.unsplash.com/photo-1552508744-1696d4464960?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  },{
-  title: 'Report Without Fear. We’ll Handle the Rest.',
-  description:
-    'Your safety matters. Share what you know —anonymously, securely, and without judgment. We’ll take it from there.',
-  image: 'https://i.pinimg.com/736x/e9/a0/3f/e9a03f0feaf15d07399b51ece64b56d0.jpg',
-},
-{
-  title: 'Your Action Today Can Prevent Harm Tomorrow.',
-  description:
-    'A simple report now can stop a serious threat later. Speak up. Save lives. Be the reason someone is safe.',
-  image: 'https://i.pinimg.com/736x/2b/52/9c/2b529c2c78c7e531797575889b05fd9d.jpg',
-},
-{
-  title: 'You See Something. We Do Something.',
-  description:
-    'Spot danger? Report it anonymously.We act swiftly to keep your community safe.',
+  }, {
+    title: 'Report Without Fear. We’ll Handle the Rest.',
+    description:
+      'Your safety matters. Share what you know —anonymously, securely, and without judgment. We’ll take it from there.',
+    image: 'https://i.pinimg.com/736x/e9/a0/3f/e9a03f0feaf15d07399b51ece64b56d0.jpg',
+  },
+  {
+    title: 'Your Action Today Can Prevent Harm Tomorrow.',
+    description:
+      'A simple report now can stop a serious threat later. Speak up. Save lives. Be the reason someone is safe.',
+    image: 'https://i.pinimg.com/736x/2b/52/9c/2b529c2c78c7e531797575889b05fd9d.jpg',
+  },
+  {
+    title: 'You See Something. We Do Something.',
+    description:
+      'Spot danger? Report it anonymously.We act swiftly to keep your community safe.',
 
-  image: 'https://i.pinimg.com/1200x/f4/e4/07/f4e4074bf4283f1779bd71174ce19cee.jpg',
-},
+    image: 'https://i.pinimg.com/1200x/f4/e4/07/f4e4074bf4283f1779bd71174ce19cee.jpg',
+  },
 ];
 
-export default HeroSlider = ({ onReportClick, onHowItWorksClick }) => {
+export default function HeroSlider({ onReportClick, onHowItWorksClick }) {
+  
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const goToPrev = () =>
@@ -58,7 +59,7 @@ export default HeroSlider = ({ onReportClick, onHowItWorksClick }) => {
   const slide = slides[currentSlide]
 
   return (
-    <div className="relative w-full h-[80vh] overflow-hidden -mt-16">
+    <div className="relative w-full h-[80vh] overflow-hidden">
       <img
         src={slide.image}
         alt={slide.title}
@@ -105,12 +106,11 @@ export default HeroSlider = ({ onReportClick, onHowItWorksClick }) => {
           <button
             key={idx}
             onClick={() => setCurrentSlide(idx)}
-            className={`w-3 h-3 rounded-full ${
-              currentSlide === idx ? 'bg-white' : 'bg-gray-500'
-            }`}
+            className={`w-3 h-3 rounded-full ${currentSlide === idx ? 'bg-white' : 'bg-gray-500'
+              }`}
           />
         ))}
       </div>
     </div>
   );
-};
+}
