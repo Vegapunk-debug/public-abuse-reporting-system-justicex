@@ -34,7 +34,7 @@ const slides = [
   },
 ]
 
-export default function HeroSlider({ onHowItWorksClick }) {
+export default function HeroSlider() {
   const navigate = useNavigate()
 
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -76,7 +76,7 @@ export default function HeroSlider({ onHowItWorksClick }) {
             </button>
 
             <button
-              onClick={onHowItWorksClick}
+              onClick={() => navigate('/how-it-works')}
               className="inline-flex items-center justify-center border border-white hover:bg-white hover:text-black text-white text-base font-medium px-6 py-3 rounded-lg transition duration-200">
               <i className="ri-information-line mr-2 text-lg"></i>
               How It Works

@@ -10,6 +10,8 @@ import About from './pages/About';
 import Login from './pages/Login';
 import ReportForm from './pages/ReportForm';
 import TrackStatus from './pages/TrackStatus';
+import Helpline from './pages/Helpline';
+import HowItWorks from './pages/HowItWorks';
 
 export default function App() {
   return (
@@ -30,6 +32,8 @@ export default function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/helpline" element={<Helpline />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
         </Routes>
       </div>
     </Router>

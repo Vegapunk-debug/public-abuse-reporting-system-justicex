@@ -5,9 +5,9 @@ const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Reports', path: '/reports' }, 
   { name: 'Track Status', path: '/track-status' },
-  { name: 'Blogs', path: '/Blogs' },
-  { name: 'Gallery', path: '/Gallery' },
-  { name: 'About', path: '/About' },
+  { name: 'Blogs', path: '/blogs' },
+  { name: 'Gallery', path: '/gallery' },
+  { name: 'About', path: '/about' }
 ]
 export default function NavBar() {
   const navigate = useNavigate()
@@ -106,7 +106,8 @@ export default function NavBar() {
 
           {role && role !== 'guest' ? (
             <button
-              onClick={() => { handleLogOut(); setIsMenuOpen(false); }}
+              onClick={() => { handleLogOut()
+                 setIsMenuOpen(false) }}
               className="text-red-600 flex items-center space-x-2"
             >
               <i className="ri-door-open-line"></i>
@@ -114,14 +115,15 @@ export default function NavBar() {
             </button>
           ) : (
             <button
-              onClick={() => { navigate('/Login'); setIsMenuOpen(false); }}
+              onClick={() => { navigate('/Login')
+                 setIsMenuOpen(false) }}
               className="text-blue-600 flex items-center space-x-2">
               <i className="ri-login-box-line"></i>
               <span>Login</span>
             </button>
           )}
           <button onClick={() => navigate("/HelpLine")} className="text-green-600 font-bold flex items-center gap-2">
-            📞 HelpLine
+           HelpLine
           </button>
         </div>
       </div>
