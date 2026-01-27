@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Reports from './pages/Reports';
 import Blogs from './pages/Blogs';
-import Gallery from './pages/Gallery';
+import News from './pages/News';
 import About from './pages/About';
 import Login from './pages/Login';
 import ReportForm from './pages/ReportForm';
@@ -29,7 +29,7 @@ export default function App() {
           <Route path="/reports" element={<Reports />} />
           <Route path="/track-status" element={<TrackStatus />} />
           <Route path="/blogs" element={<Blogs />} />
-          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/news" element={<News />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/helpline" element={<Helpline />} />
