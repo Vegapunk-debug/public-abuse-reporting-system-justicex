@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import logo from '../assets/logo.png'
 
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Reports', path: '/reports' },
   { name: 'Track Status', path: '/track-status' },
-  { name: 'Blogs', path: '/blogs' },
+  // { name: 'Blogs', path: '/blogs' },
   { name: 'News', path: '/news' },
   { name: 'About', path: '/about' }
 ]
@@ -33,6 +34,11 @@ export default function NavBar() {
         <div
           onClick={() => navigate('/')}
           className="flex items-center space-x-3 text-black font-extrabold text-3xl tracking-wider select-none cursor-pointer group z-50 relative">
+          <img
+            src={logo}
+            alt="JusticeX Logo"
+            className="h-16 w-auto object-contain hover:scale-105 transition-transform duration-300"
+          />
           <span className="animate-fade-in-left hover:text-blue-600 transition-colors duration-300">
             JUSTICE
           </span>
