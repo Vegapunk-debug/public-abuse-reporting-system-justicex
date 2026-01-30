@@ -96,6 +96,13 @@ export default function ReportingForm() {
 
     try {
         const combinedDate = new Date(`${formData.date}T${formData.time}`)
+        const now = new Date()
+
+        if (combinedDate > now){
+            alert("You cannot report a future incident.Please check the Date and Time.")
+            setLoading(false)
+            return  
+        }
       
       const payload = {
         title: formData.title,
@@ -285,6 +292,8 @@ export default function ReportingForm() {
                         value={formData.date}
                         onChange={handleChange}
                         required
+
+                        max={new Date().toISOString().split("T")[0]}
                         className="w-full border-b-2 border-slate-200 bg-slate-50 p-2 text-slate-900 focus:outline-none focus:border-blue-900"/>
                 </div>
                 <div>
@@ -297,6 +306,8 @@ export default function ReportingForm() {
                         value={formData.time}
                         onChange={handleChange}
                         required
+
+                        // max={formData.date === new Date().toISOString().split("T")[0] ? new Date().toTimeString().slice(0, 5) : null}
                         className="w-full border-b-2 border-slate-200 bg-slate-50 p-2 text-slate-900 focus:outline-none focus:border-blue-900"/>
                 </div>
             </div>
