@@ -54,13 +54,30 @@ export default function ReportingForm() {
   const getLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
-        (position) => {
+
+       async (position) => {
+
           setFormData((prev) => ({
             ...prev,
             latitude: position.coords.latitude,
             longitude: position.coords.longitude
-          }));
-          alert("Location coordinates captured.") 
+          }))
+          try {
+            const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${position.coords.latitude}&lon=${position.coords.longitude}`)
+            const data = await response.json()
+
+            if (data && data.display_name){
+                setFormData((prev) => ({
+                    ...prev,
+                    location: data.display_name
+                }))
+                alert("Location successfully auto filled. You can edit it if you want.")
+            }
+          } catch (error) {
+            console.error("Error fetching address",error)
+            alert("GPS coordinates captured, but could not find text address. Please type it manually.")
+          }
+        //   alert("Location coordinates captured.") 
         },
         (error) => {
           console.error(error);

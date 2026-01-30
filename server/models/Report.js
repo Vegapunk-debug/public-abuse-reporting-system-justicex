@@ -26,6 +26,8 @@ const ReportSchema = new mongoose.Schema({
             'Domestic Violence', 
             'Sexual Harassment', 
             'Human Trafficking', 
+            'Cyber Bullying',
+            'Robbery',
             'Other'
         ]
     },
