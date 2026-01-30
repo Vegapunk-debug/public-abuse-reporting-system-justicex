@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export default function Login() {
+export default function AdminLogin() {
   const navigate = useNavigate()
   
   const [formData, setFormData] = useState({ email: '', password: '' })
@@ -61,8 +61,7 @@ export default function Login() {
                 <div className="flex gap-2 justify-center">
                     <button 
                         onClick={() => navigate('/report')}
-                        className="text-[10px] bg-white border border-blue-300 text-blue-800 hover:bg-blue-100 px-3 py-1 rounded uppercase font-bold transition-colors cursor-pointer"
-                    >
+                        className="text-[10px] bg-white border border-blue-300 text-blue-800 hover:bg-blue-100 px-3 py-1 rounded uppercase font-bold transition-colors cursor-pointer">
                         File Complaint
                     </button>
                     <button 

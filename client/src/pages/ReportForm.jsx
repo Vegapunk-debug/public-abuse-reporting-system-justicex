@@ -112,8 +112,7 @@ export default function ReportingForm() {
                 <img 
                     src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" 
                     alt="Emblem" 
-                    className="w-16 h-auto"
-                />
+                    className="w-16 h-auto"/>
             </div>
             
             <h2 className="text-2xl font-bold text-slate-900 uppercase tracking-wide mb-2">Acknowledgement of Receipt</h2>
@@ -168,8 +167,7 @@ export default function ReportingForm() {
                  <img 
                     src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" 
                     alt="Govt Logo" 
-                    className="w-10 h-auto"
-                />
+                    className="w-10 h-auto"/>
             </div>
             <div>
                 <h2 className="text-white text-lg font-bold uppercase tracking-wider leading-none">Incident Reporting Portal</h2>
@@ -191,8 +189,7 @@ export default function ReportingForm() {
                         onChange={handleChange}
                         placeholder="Subject / Title"
                         required
-                        className="w-full border-b-2 border-slate-200 bg-slate-50 p-3 text-slate-900 focus:outline-none focus:border-blue-900 transition-colors rounded-t-sm"
-                    />
+                        className="w-full border-b-2 border-slate-200 bg-slate-50 p-3 text-slate-900 focus:outline-none focus:border-blue-900 transition-colors rounded-t-sm"/>
                 </div>
 
                 <div>
@@ -204,15 +201,18 @@ export default function ReportingForm() {
                         value={formData.category}
                         onChange={handleChange}
                         required
-                        className="w-full border-b-2 border-slate-200 bg-slate-50 p-3 text-slate-900 focus:outline-none focus:border-blue-900 transition-colors rounded-t-sm"
-                    >
+                        className="w-full border-b-2 border-slate-200 bg-slate-50 p-3 text-slate-900 focus:outline-none focus:border-blue-900 transition-colors rounded-t-sm">
+
                         <option value="">Select Category of Incident</option>
                         <option value="Child Abuse">Child Abuse</option>
                         <option value="Drug Activity">Drug Activity</option>
                         <option value="Domestic Violence">Domestic Violence</option>
                         <option value="Sexual Harassment">Sexual Harassment</option>
                         <option value="Human Trafficking">Human Trafficking</option>
+                        <option value="Cyber Bullying">Cyber Bullying</option>
+                        <option value="Robbery">Robbery</option>
                         <option value="Other">Other</option>
+
                     </select>
                 </div>
             </div>
@@ -228,8 +228,7 @@ export default function ReportingForm() {
                     onChange={handleChange}
                     rows="5"
                     placeholder="Provide factual details of the incident..."
-                    className="w-full border-2 border-slate-200 bg-slate-50 p-3 text-slate-900 focus:outline-none focus:border-blue-900 transition-colors rounded-sm"
-                ></textarea>
+                    className="w-full border-2 border-slate-200 bg-slate-50 p-3 text-slate-900 focus:outline-none focus:border-blue-900 transition-colors rounded-sm"></textarea>
             </div>
 
             <div className="bg-blue-50 p-4 border border-blue-100 rounded-sm">
@@ -255,8 +254,7 @@ export default function ReportingForm() {
                     onChange={handleChange}
                     placeholder="Physical Address / Landmark"
                     required
-                    className="w-full border border-slate-300 p-2 text-sm focus:outline-none focus:border-blue-900"
-                />
+                    className="w-full border border-slate-300 p-2 text-sm focus:outline-none focus:border-blue-900"/>
             </div>
 
             <div className="grid grid-cols-2 gap-6">
@@ -270,8 +268,7 @@ export default function ReportingForm() {
                         value={formData.date}
                         onChange={handleChange}
                         required
-                        className="w-full border-b-2 border-slate-200 bg-slate-50 p-2 text-slate-900 focus:outline-none focus:border-blue-900"
-                    />
+                        className="w-full border-b-2 border-slate-200 bg-slate-50 p-2 text-slate-900 focus:outline-none focus:border-blue-900"/>
                 </div>
                 <div>
                     <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">
@@ -283,8 +280,7 @@ export default function ReportingForm() {
                         value={formData.time}
                         onChange={handleChange}
                         required
-                        className="w-full border-b-2 border-slate-200 bg-slate-50 p-2 text-slate-900 focus:outline-none focus:border-blue-900"
-                    />
+                        className="w-full border-b-2 border-slate-200 bg-slate-50 p-2 text-slate-900 focus:outline-none focus:border-blue-900"/>
                 </div>
             </div>
 
@@ -318,8 +314,7 @@ export default function ReportingForm() {
                         value={formData.anonymous}
                         onChange={handleChange}
                         required
-                        className="w-full border border-orange-200 bg-white p-2 text-sm focus:outline-none focus:border-orange-500"
-                    >
+                        className="w-full border border-orange-200 bg-white p-2 text-sm focus:outline-none focus:border-orange-500">
                         <option value="">Select Preference</option>
                         <option value="yes">Remain Anonymous (Protected)</option>
                         <option value="no">Reveal Identity</option>
@@ -355,6 +350,7 @@ export default function ReportingForm() {
     </BackgroundWrapper>
   )
 }
+
 
 //   return (
 //     <form

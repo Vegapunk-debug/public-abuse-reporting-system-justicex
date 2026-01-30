@@ -80,7 +80,7 @@ export default function Footer() {
                 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
             <a href="mailto:support@gmail.com" className="hover:underline text-gray-400">
-              rohitnairmuttathethu@gmail.com
+            rohitnairmuttathethu@gmail.com
             </a>
           </div>
         </div>

@@ -46,7 +46,7 @@ const newsItems = [
         avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
         image: 'https://www.mhfkolkata.com/wp-content/uploads/44c5573a-9c8a-429e-a770-029a3090d138.jpg',
         summary: 'New campaign targets youth with information on crime prevention and legal rights.',
-    },
+    }
 ]
 
 export default function News() {

@@ -19,7 +19,7 @@ export default function NavBar() {
 
   const handleLogOut = () => {
     localStorage.removeItem('data')
-    navigate('/Login')
+    navigate('/admin-login')
   }
 
   const handleNavigation = (path) => {
@@ -85,10 +85,10 @@ export default function NavBar() {
               </button>
             )
               : (<button
-                onClick={() => navigate('/Login')}
+                onClick={() => navigate('/admin-login')}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-all hover:shadow-md">
                 <i className="ri-login-box-line"></i>
-                <span>Login</span>
+                <span>Admin Login</span>
               </button>
               )}
           </div>
@@ -124,12 +124,12 @@ export default function NavBar() {
           ) : (
             <button
               onClick={() => {
-                navigate('/Login')
+                navigate('/admin-login')
                 setIsMenuOpen(false)
               }}
               className="text-blue-600 flex items-center space-x-2">
               <i className="ri-login-box-line"></i>
-              <span>Login</span>
+              <span>Admin Login</span>
             </button>
           )}
           <button onClick={() => navigate("/HelpLine")} className="text-green-600 font-bold flex items-center gap-2">

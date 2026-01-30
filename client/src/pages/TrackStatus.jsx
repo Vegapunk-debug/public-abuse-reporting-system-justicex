@@ -62,8 +62,7 @@ export default function TrackStatus() {
             <button
               type="submit"
               className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 font-bold transition-transform active:scale-95 shadow-md disabled:opacity-50"
-              disabled={loading}
-            >
+              disabled={loading}>
               {loading ? "Searching..." : "Check Status"}
             </button>
           </form>

@@ -7,7 +7,7 @@ import Reports from './pages/Reports';
 import Blogs from './pages/Blogs';
 import News from './pages/News';
 import About from './pages/About';
-import Login from './pages/Login';
+import AdminLogin from './pages/AdminLogin';
 import ReportForm from './pages/ReportForm';
 import TrackStatus from './pages/TrackStatus';
 import Helpline from './pages/Helpline';
@@ -31,7 +31,7 @@ export default function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/news" element={<News />} />
           <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/helpline" element={<Helpline />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
         </Routes>
