@@ -32,6 +32,26 @@ const slides = [
     description: 'Spot danger? Report it anonymously.We act swiftly to keep your community safe.',
     image: 'https://i.pinimg.com/1200x/f4/e4/07/f4e4074bf4283f1779bd71174ce19cee.jpg',
   },
+{
+    title: 'Stand Against Domestic Violence.',
+    description: 'You are not alone. Report domestic abuse or harassment securely. We provide immediate intervention and support networks.',
+    image: 'https://images.unsplash.com/photo-1590608897129-79da98d15969?q=80&w=2070&auto=format&fit=crop',
+  },
+  {
+    title: 'Digital Threats Are Real. Report Cyber Crime.',
+    description: 'Victim of online harassment, fraud, or identity theft? File a digital report instantly and let our cyber cell track the perpetrators.',
+    image: 'https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=2070&auto=format&fit=crop',
+  },
+  {
+    title: 'Zero Tolerance for Corruption.',
+    description: 'Witnessing bribery or misuse of power? Blow the whistle safely. Your identity remains shielded while we investigate.',
+    image: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2070&auto=format&fit=crop',
+  },
+  {
+    title: 'Emergency Response. When Seconds Count.',
+    description: 'Our integrated network connects you directly to Police and Medical units. Don’t wait—alert authorities immediately.',
+    image: 'https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?q=80&w=2073&auto=format&fit=crop',
+  }
 ]
 
 export default function HeroSlider() {
