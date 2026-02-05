@@ -5,7 +5,6 @@ const newsItems = [
     {
         id: 1,
         date: 'JUL 15, 2025',
-        category: 'Community Safety',
         title: 'New Crime Prevention Initiative Launched',
         author: 'City Police Dept.',
         avatar: 'https://randomuser.me/api/portraits/men/45.jpg',
@@ -15,7 +14,6 @@ const newsItems = [
     {
         id: 2,
         date: 'JUL 10, 2025',
-        category: 'Tech Update',
         title: 'Anonymous Reporting App Update v2.0',
         author: 'IT Cell',
         avatar: 'https://randomuser.me/api/portraits/women/50.jpg',
@@ -25,7 +23,6 @@ const newsItems = [
     {
         id: 3,
         date: 'JUL 05, 2025',
-        category: 'Workshop',
         title: 'Community Safety Workshop',
         author: 'Nodal NGO',
         avatar: 'https://randomuser.me/api/portraits/men/60.jpg',
@@ -35,7 +32,6 @@ const newsItems = [
     {
         id: 4,
         date: 'JUN 30, 2025',
-        category: 'Statistics',
         title: 'Annual Crime Statistics Report Released',
         author: 'Govt. Statistics',
         avatar: 'https://randomuser.me/api/portraits/women/55.jpg',
@@ -45,7 +41,6 @@ const newsItems = [
     {
         id: 5,
         date: 'JUN 25, 2025',
-        category: 'Campaign',
         title: 'Youth Crime Awareness Campaign',
         author: 'Education Min.',
         avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
@@ -78,7 +73,6 @@ export default function News() {
 
     return (
         <div className="font-sans text-slate-900 bg-white">
-
             <section className="py-16 bg-slate-50 border-b border-slate-200">
                 <div className="max-w-7xl mx-auto px-6">
 

@@ -6,22 +6,27 @@ import Home from './pages/Home';
 import Reports from './pages/Reports';
 import Blogs from './pages/Blogs';
 import News from './pages/News';
-import NewsDetail from './pages/NewsDetail';
 import About from './pages/About';
 import AdminLogin from './pages/AdminLogin';
 import ReportForm from './pages/ReportForm';
 import TrackStatus from './pages/TrackStatus';
 import Helpline from './pages/Helpline';
 import HowItWorks from './pages/HowItWorks';
+import NewsDetail from './pages/NewsDetail';
 
 export default function App() {
   return (
+    // <><h1>JusticeX</h1></>
     <Router>
+
       <Navbar />
+
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
+
           <Route path="/report" element={<ReportForm />} />
+
           <Route path="/reports" element={<Reports />} />
           <Route path="/track-status" element={<TrackStatus />} />
           <Route path="/blogs" element={<Blogs />} />
@@ -36,5 +41,4 @@ export default function App() {
     </Router>
   )
 }
-
 
