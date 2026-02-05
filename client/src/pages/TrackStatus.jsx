@@ -8,7 +8,7 @@ export default function TrackStatus() {
   const [loading, setLoading] = useState(false)
 
   const checkStatus = async (e) => {
-    
+
     e.preventDefault()
     if (!reportId.trim()) return
 
@@ -39,7 +39,7 @@ export default function TrackStatus() {
   return (
     <div className="min-h-[80vh] flex flex-col items-center justify-center p-4">
       <div className="max-w-md w-full bg-white rounded-xl shadow-2xl overflow-hidden">
-        
+
         <div className="bg-gray-900 p-6 text-center">
           <h2 className="text-2xl font-bold text-white">Track Your Report</h2>
           <p className="text-gray-400 text-sm mt-2">Enter your Report ID to check progress</p>
@@ -58,7 +58,7 @@ export default function TrackStatus() {
                 required
               />
             </div>
-            
+
             <button
               type="submit"
               className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 font-bold transition-transform active:scale-95 shadow-md disabled:opacity-50"
@@ -76,14 +76,14 @@ export default function TrackStatus() {
           {statusResult && (
             <div className="mt-8 border-t pt-6 animate-fade-in-up">
               <h3 className="text-lg font-bold text-gray-800 mb-2">{statusResult.title}</h3>
-              
+
               <div className="flex justify-between items-center bg-gray-50 p-4 rounded-lg border border-gray-100">
                 <span className="text-gray-600 font-medium text-sm">Current Status:</span>
                 <span className={`px-4 py-1.5 rounded-full text-sm font-bold border ${getStatusColor(statusResult.status)}`}>
                   {statusResult.status}
                 </span>
               </div>
-              
+
               <p className="mt-4 text-xs text-gray-400 text-center">
                 Last Updated: {new Date(statusResult.updatedAt).toLocaleString()}
               </p>

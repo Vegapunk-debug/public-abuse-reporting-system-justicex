@@ -5,6 +5,7 @@ const newsItems = [
     {
         id: 1,
         date: 'JUL 15, 2025',
+        category: 'Community Safety',
         title: 'New Crime Prevention Initiative Launched',
         author: 'City Police Dept.',
         avatar: 'https://randomuser.me/api/portraits/men/45.jpg',
@@ -14,6 +15,7 @@ const newsItems = [
     {
         id: 2,
         date: 'JUL 10, 2025',
+        category: 'Tech Update',
         title: 'Anonymous Reporting App Update v2.0',
         author: 'IT Cell',
         avatar: 'https://randomuser.me/api/portraits/women/50.jpg',
@@ -23,6 +25,7 @@ const newsItems = [
     {
         id: 3,
         date: 'JUL 05, 2025',
+        category: 'Workshop',
         title: 'Community Safety Workshop',
         author: 'Nodal NGO',
         avatar: 'https://randomuser.me/api/portraits/men/60.jpg',
@@ -32,6 +35,7 @@ const newsItems = [
     {
         id: 4,
         date: 'JUN 30, 2025',
+        category: 'Statistics',
         title: 'Annual Crime Statistics Report Released',
         author: 'Govt. Statistics',
         avatar: 'https://randomuser.me/api/portraits/women/55.jpg',
@@ -41,6 +45,7 @@ const newsItems = [
     {
         id: 5,
         date: 'JUN 25, 2025',
+        category: 'Campaign',
         title: 'Youth Crime Awareness Campaign',
         author: 'Education Min.',
         avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
@@ -50,6 +55,8 @@ const newsItems = [
 ]
 
 export default function News() {
+    const navigate = useNavigate()
+
     const [currentIndex, setCurrentIndex] = useState(0)
     const itemsPerView = 3
     const totalItems = newsItems.length
@@ -63,7 +70,7 @@ export default function News() {
     };
 
     useEffect(() => {
-        const interval = setInterval(goToNext, 5000)
+        const interval = setInterval(goToNext, 6000)
         return () => clearInterval(interval)
     }, [currentIndex])
 
@@ -71,48 +78,81 @@ export default function News() {
 
     return (
         <div className="font-sans text-slate-900 bg-white">
-            <section className="py-16 bg-slate-50 border-b border-slate-200">
-                <div className="max-w-6xl mx-auto px-6">
 
-                    <div className="flex flex-col md:flex-row justify-between items-end mb-8 border-b border-slate-300 pb-4">
+            <section className="py-16 bg-slate-50 border-b border-slate-200">
+                <div className="max-w-7xl mx-auto px-6">
+
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-12 border-b-2 border-slate-200 pb-6">
                         <div>
-                            <h2 className="text-2xl font-bold text-slate-900 uppercase tracking-tight">Departmental Updates</h2>
-                            <p className="text-sm text-slate-500 mt-1">Official press releases and community advisories.</p>
+
+                            <h2 className="text-3xl font-extrabold text-slate-900 uppercase tracking-tight">Departmental Updates</h2>
+                            <p className="text-slate-500 mt-2 max-w-xl">Stay informed with the latest announcements, safety advisories, and press releases from the Ministry of Public Safety.</p>
                         </div>
-                        <div className="flex gap-2 mt-4 md:mt-0">
-                            <button onClick={goToPrev} className="bg-white border border-slate-300 text-slate-600 hover:bg-slate-900 hover:text-white px-3 py-1 rounded-sm transition-colors">
-                                ←
+
+                        <div className="flex gap-2 mt-6 md:mt-0">
+                            <button
+                                onClick={goToPrev}
+                                className="w-12 h-12 flex items-center justify-center border border-slate-300 text-slate-600 hover:bg-blue-900 hover:text-white hover:border-blue-900 rounded-full transition-all duration-300 shadow-sm">
+                                <i className="ri-arrow-left-line text-xl"></i>
                             </button>
-                            <button onClick={goToNext} className="bg-white border border-slate-300 text-slate-600 hover:bg-slate-900 hover:text-white px-3 py-1 rounded-sm transition-colors">
-                                →
+                            <button
+                                onClick={goToNext}
+                                className="w-12 h-12 flex items-center justify-center border border-slate-300 text-slate-600 hover:bg-blue-900 hover:text-white hover:border-blue-900 rounded-full transition-all duration-300 shadow-sm">
+                                <i className="ri-arrow-right-line text-xl"></i>
                             </button>
                         </div>
                     </div>
 
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {visibleItems.map((news) => (
-                            <div key={news.id} className="bg-white border border-slate-200 shadow-sm hover:border-slate-400 transition-colors flex flex-col h-full">
-                                <div className="h-48 overflow-hidden bg-slate-200 relative">
-                                    <img src={news.image} alt={news.title} className="w-full h-full object-cover" />
-                                    <div className="absolute top-0 left-0 bg-slate-900 text-white text-[10px] font-bold px-2 py-1 uppercase">
-                                        Press Release
+                            <div
+                                key={news.id}
+                                onClick={() => navigate(`/news/${news.id}`)}
+                                className="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-slate-100 flex flex-col h-full cursor-pointer relative">
+
+                                <div className="h-56 overflow-hidden bg-slate-200 relative">
+                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors z-10"></div>
+                                    <img
+                                        src={news.image}
+                                        alt={news.title}
+                                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                                    />
+                                    <div className="absolute top-4 left-4 z-20">
+                                        <span className="bg-blue-600 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-wider rounded-full shadow-lg">
+                                            {news.category}
+                                        </span>
                                     </div>
                                 </div>
-                                <div className="p-6 flex-1 flex flex-col">
-                                    <div className="flex justify-between items-center mb-3">
-                                        <span className="text-xs font-mono text-slate-500">{news.date}</span>
-                                        <span className="text-[10px] bg-slate-100 px-2 py-0.5 rounded text-slate-600 border border-slate-200 uppercase">{news.author}</span>
+
+                                <div className="p-8 flex-1 flex flex-col relative bg-white">
+                                    <div className="absolute -top-6 right-8 bg-white p-2 rounded shadow-lg border-t-4 border-blue-900 text-center w-16 group-hover:border-red-600 transition-colors">
+                                        <span className="block text-2xl font-bold text-slate-900 leading-none">
+                                            {news.date.split(' ')[1].replace(',', '')}
+                                        </span>
+                                        <span className="block text-[10px] font-bold text-slate-500 uppercase">
+                                            {news.date.split(' ')[0]}
+                                        </span>
                                     </div>
-                                    <h3 className="text-lg font-bold text-slate-900 mb-3 leading-snug line-clamp-2">
-                                        {news.title}
-                                    </h3>
-                                    <p className="text-sm text-slate-600 mb-4 line-clamp-3 flex-1">
-                                        {news.summary}
-                                    </p>
-                                    <div className="flex items-center gap-3 pt-4 border-t border-slate-100 mt-auto">
-                                        <img src={news.avatar} alt={news.author} className="w-6 h-6 rounded-full border border-slate-300" />
-                                        <span className="text-xs font-semibold text-slate-700">By {news.author}</span>
+
+                                    <div className="mt-2 mb-4">
+                                        <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">
+                                            <span>{news.author}</span>
+                                            <span>•</span>
+                                            <span>2 Min Read</span>
+                                        </div>
+                                        <h3 className="text-xl font-bold text-slate-900 mb-3 leading-tight group-hover:text-blue-700 transition-colors">
+                                            {news.title}
+                                        </h3>
+                                        <p className="text-sm text-slate-500 leading-relaxed mb-6 line-clamp-3">
+                                            {news.summary}
+                                        </p>
+                                    </div>
+
+                                    <div className="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
+                                        <span className="text-xs font-bold text-blue-600 uppercase tracking-wide group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                                            Read Full Release <i className="ri-arrow-right-line"></i>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -121,6 +161,16 @@ export default function News() {
 
                 </div>
             </section>
+
+            <style>{`
+                @keyframes marquee {
+                    0% { transform: translateX(100%); }
+                    100% { transform: translateX(-100%); }
+                }
+                .animate-marquee {
+                    animation: marquee 25s linear infinite;
+                }
+            `}</style>
         </div>
     )
 }

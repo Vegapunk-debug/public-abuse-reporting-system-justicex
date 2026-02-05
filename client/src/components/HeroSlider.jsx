@@ -16,7 +16,7 @@ const slides = [
     title: 'Help Build a Safer Community',
     description: 'Your voice matters. Report crime and abuse securely — empower change in your society.',
     image: 'https://images.unsplash.com/photo-1552508744-1696d4464960?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  }, 
+  },
   {
     title: 'Report Without Fear. We’ll Handle the Rest.',
     description: 'Your safety matters. Share what you know —anonymously, securely, and without judgment. We’ll take it from there.',
@@ -32,7 +32,7 @@ const slides = [
     description: 'Spot danger? Report it anonymously.We act swiftly to keep your community safe.',
     image: 'https://i.pinimg.com/1200x/f4/e4/07/f4e4074bf4283f1779bd71174ce19cee.jpg',
   },
-{
+  {
     title: 'Stand Against Domestic Violence.',
     description: 'You are not alone. Report domestic abuse or harassment securely. We provide immediate intervention and support networks.',
     image: 'https://images.unsplash.com/photo-1590608897129-79da98d15969?q=80&w=2070&auto=format&fit=crop',
@@ -70,7 +70,7 @@ export default function HeroSlider() {
     return () => clearInterval(interval)
   }, [currentSlide])
 
-  
+
   const slide = slides[currentSlide]
 
   return (
@@ -87,7 +87,7 @@ export default function HeroSlider() {
           <p className="text-lg md:text-xl mb-6">{slide.description}</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            
+
             <button
               onClick={() => navigate('/report')}
               className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white text-base font-semibold px-6 py-3 rounded-lg transition duration-200 shadow-sm">
