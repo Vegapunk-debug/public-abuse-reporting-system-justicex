@@ -13,6 +13,7 @@ import TrackStatus from './pages/TrackStatus';
 import Helpline from './pages/Helpline';
 import HowItWorks from './pages/HowItWorks';
 import NewsDetail from './pages/NewsDetail';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/helpline" element={<Helpline />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </div>
     </Router>

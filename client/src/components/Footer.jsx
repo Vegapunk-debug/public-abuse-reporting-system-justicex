@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#111113] text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
-        
+
         <div className="md:col-span-2">
           <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
             Speak Up.<br />
@@ -24,9 +24,9 @@ export default function Footer() {
             <a href="#" target="_blank" className="text-gray-400 hover:text-white">
               <i className="ri-instagram-fill text-xl"></i>
             </a>
-            <a href="https://www.linkedin.com/in/rohit-nair-p-7a535b251" 
-            target="_blank" 
-            className="text-gray-400 hover:text-white">
+            <a href="https://www.linkedin.com/in/rohit-nair-p-7a535b251"
+              target="_blank"
+              className="text-gray-400 hover:text-white">
               <i className="ri-linkedin-fill text-xl"></i>
             </a>
           </div>
@@ -47,7 +47,7 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold mb-4">Legal</h3>
           <ul className="space-y-2 text-gray-400">
-            <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
+            <li><a href="/privacy-policy" className="hover:text-white">Privacy Policy</a></li>
             <li><a href="#" className="hover:text-white">Terms of Service</a></li>
             <li><a href="#" className="hover:text-white">Disclaimer</a></li>
             <li><a href="#" className="hover:text-white">Data Protection</a></li>
@@ -80,7 +80,7 @@ export default function Footer() {
                 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
             <a href="mailto:support@gmail.com" className="hover:underline text-gray-400">
-            rohitnairmuttathethu@gmail.com
+              rohitnairmuttathethu@gmail.com
             </a>
           </div>
         </div>

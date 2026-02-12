@@ -63,6 +63,7 @@ export default function NavBar() {
         </nav>
 
 
+
         <div className="flex items-center space-x-4">
           <button
             onClick={() => navigate("/HelpLine")}

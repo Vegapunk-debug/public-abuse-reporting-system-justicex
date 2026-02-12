@@ -48,9 +48,11 @@ export default function TrackStatus() {
         <div className="p-8">
           <form onSubmit={checkStatus} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Report Reference ID</label>
+              <label htmlFor="reportId" className="block text-sm font-medium text-gray-700 mb-1">Report Reference ID</label>
               <input
                 type="text"
+                id="reportId"
+                autoComplete="off"
                 placeholder="e.g., 65b2c..."
                 value={reportId}
                 onChange={(e) => setReportId(e.target.value)}
