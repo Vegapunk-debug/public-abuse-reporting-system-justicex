@@ -14,6 +14,9 @@ import Helpline from './pages/Helpline';
 import HowItWorks from './pages/HowItWorks';
 import NewsDetail from './pages/NewsDetail';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import Disclaimer from './pages/Disclaimer';
+import DataProtection from './pages/DataProtection';
 
 export default function App() {
   return (
@@ -34,10 +37,16 @@ export default function App() {
           <Route path="/news" element={<News />} />
           <Route path="/news/:id" element={<NewsDetail />} />
           <Route path="/about" element={<About />} />
+
           <Route path="/admin-login" element={<AdminLogin />} />
+
           <Route path="/helpline" element={<Helpline />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
+
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
+          <Route path="/data-protection" element={<DataProtection />} />
         </Routes>
       </div>
     </Router>
