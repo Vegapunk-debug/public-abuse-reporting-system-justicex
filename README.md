@@ -88,7 +88,7 @@ Follow these steps to set up the project locally.
 
 | Landing Page | Reporting Interface |
 |:---:|:---:|
-| ![Landing](https://via.placeholder.com/400x200?text=Landing+Page+Preview) | ![Form](https://via.placeholder.com/400x200?text=Reporting+Form+Preview) |
+| ![Landing]() | ![Form]() |
 
 ---
 
