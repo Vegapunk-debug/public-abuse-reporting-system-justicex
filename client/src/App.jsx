@@ -22,32 +22,33 @@ export default function App() {
   return (
     // <><h1>JusticeX</h1></>
     <Router>
+      <div className="min-h-screen bg-gray-50 text-gray-900 dark:bg-black dark:text-white transition-colors duration-300 flex flex-col">
+        <Navbar />
 
-      <Navbar />
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
 
-      <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
+            <Route path="/report" element={<ReportForm />} />
 
-          <Route path="/report" element={<ReportForm />} />
+            <Route path="/reports" element={<Reports />} />
+            <Route path="/track-status" element={<TrackStatus />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/news/:id" element={<NewsDetail />} />
+            <Route path="/about" element={<About />} />
 
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/track-status" element={<TrackStatus />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/news/:id" element={<NewsDetail />} />
-          <Route path="/about" element={<About />} />
+            <Route path="/admin-login" element={<AdminLogin />} />
 
-          <Route path="/admin-login" element={<AdminLogin />} />
+            <Route path="/helpline" element={<Helpline />} />
+            <Route path="/how-it-works" element={<HowItWorks />} />
 
-          <Route path="/helpline" element={<Helpline />} />
-          <Route path="/how-it-works" element={<HowItWorks />} />
-
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="/disclaimer" element={<Disclaimer />} />
-          <Route path="/data-protection" element={<DataProtection />} />
-        </Routes>
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/disclaimer" element={<Disclaimer />} />
+            <Route path="/data-protection" element={<DataProtection />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   )

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.png'
+import DarkModeToggle from './DarkModeToggle'
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -28,18 +29,18 @@ export default function NavBar() {
   }
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-50 transition-colors duration-300 border-b border-gray-100 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
         <div
           onClick={() => navigate('/')}
-          className="flex items-center space-x-3 text-black font-extrabold text-3xl tracking-wider select-none cursor-pointer group z-50 relative">
+          className="flex items-center space-x-3 text-black dark:text-white font-extrabold text-3xl tracking-wider select-none cursor-pointer group z-50 relative">
           <img
             src={logo}
             alt="JusticeX Logo"
             className="h-16 w-auto object-contain hover:scale-105 transition-transform duration-300"
           />
-          <span className="animate-fade-in-left hover:text-blue-600 transition-colors duration-300">
+          <span className="animate-fade-in-left hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
             JUSTICE
           </span>
           <span className="relative inline-block overflow-hidden w-9 h-9">
@@ -50,12 +51,12 @@ export default function NavBar() {
         </div>
 
 
-        <nav className="hidden md:flex space-x-8 font-medium text-gray-700">
+        <nav className="hidden md:flex space-x-8 font-medium text-gray-700 dark:text-gray-300 transition-colors duration-300">
           {navLinks.map((link) => (
             <button
               key={link.name}
               onClick={() => navigate(link.path)}
-              className="transition-colors hover:text-blue-600"
+              className="transition-colors hover:text-blue-600 dark:hover:text-blue-400"
             >
               {link.name}
             </button>
@@ -65,13 +66,14 @@ export default function NavBar() {
 
 
         <div className="flex items-center space-x-4">
+          <DarkModeToggle />
           <button
             onClick={() => navigate("/HelpLine")}
             className="hidden md:flex fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-5 rounded-full shadow-lg transition duration-300 items-center gap-2 hover:scale-105">
             HelpLine
           </button>
           <button
-            className="md:hidden text-2xl text-gray-700 focus:outline-none z-50 relative"
+            className="md:hidden text-2xl text-gray-700 dark:text-gray-300 focus:outline-none z-50 relative"
             onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <i className={isMenuOpen ? "ri-close-line" : "ri-menu-line"}></i>
           </button>
@@ -97,8 +99,8 @@ export default function NavBar() {
       </div>
 
 
-      <div className={`md:hidden absolute top-0 left-0 w-full bg-white shadow-lg transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-screen py-20 opacity-100' : 'max-h-0 overflow-hidden opacity-0'}`}>
-        <div className="flex flex-col items-center space-y-6 font-medium text-gray-700 text-lg">
+      <div className={`md:hidden absolute top-0 left-0 w-full bg-white dark:bg-gray-900 shadow-lg transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-screen py-20 opacity-100' : 'max-h-0 overflow-hidden opacity-0'}`}>
+        <div className="flex flex-col items-center space-y-6 font-medium text-gray-700 dark:text-gray-300 text-lg">
           {navLinks.map((link) => (
             <button
               key={link.name}
