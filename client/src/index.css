@@ -68,3 +68,37 @@ html.dark header.bg-white {
   background-color: #000000 !important;
   border-bottom-color: #222222 !important;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #bae6fd; 
+  color: #0c4a6e; 
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #333333;
+}
