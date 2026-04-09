@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.png'
-import DarkModeToggle from './DarkModeToggle'
+
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -66,7 +66,6 @@ export default function NavBar() {
 
 
         <div className="flex items-center space-x-4">
-          <DarkModeToggle />
           <button
             onClick={() => navigate("/HelpLine")}
             className="hidden md:flex fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-5 rounded-full shadow-lg transition duration-300 items-center gap-2 hover:scale-105">

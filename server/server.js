@@ -23,14 +23,14 @@ app.use('/api/reports', reportRouter)
 // })
 
 
-const serverConnection = async() => {
-    try {
-        await connectDB()
-        app.listen(PORT, () => {
-            console.log(`Server running on port ${PORT}`)
-        })
-    } catch (error) {
-        console.error("Error connecting to MongoDB", error)
-    }
+const serverConnection = async () => {
+  try {
+    await connectDB()
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`)
+    })
+  } catch (error) {
+    console.error("Error connecting to MongoDB", error)
+  }
 }
 serverConnection()

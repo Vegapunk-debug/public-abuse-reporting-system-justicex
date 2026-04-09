@@ -88,8 +88,3 @@ exports.getReportStatus = async (req, res) => {
     res.status(500).json({ error: "Invalid Report ID" })
   }
 }
-
-// module.exports = {
-//   addReport,
-//   getReport
-// }

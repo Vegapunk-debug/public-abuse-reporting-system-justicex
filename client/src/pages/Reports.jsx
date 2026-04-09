@@ -6,10 +6,13 @@ export default function Reports() {
   const [reports, setReports] = useState([])
   const [loading, setLoading] = useState(true)
 
+  const [category, setCategory] = useState('All')
+
   useEffect(() => {
     const fetchReports = async () => {
       try {
         const res = await axiosInstance.get('/reports')
+
         setReports(res.data)
       } catch (error) {
         console.error("Error fetching reports:", error)
@@ -21,6 +24,17 @@ export default function Reports() {
     fetchReports()
   }, [])
 
+  const categories = ['All', ...new Set(reports.map(r => r.category))]
+
+  const filteredReports = reports.filter((report) => {
+    return category === 'All' || report.category === category
+  })
+
+  function handleChange(e) {
+    setCategory(e.target.value)
+  }
+
+
   if (loading) return <div className="text-center mt-10">Loading reports...</div>
 
   return (
@@ -31,33 +45,52 @@ export default function Reports() {
           + Report Incident
         </Link>
       </div>
-
       {reports.length === 0 ? (
-        <p className="text-gray-500 text-center">No reports found yet.</p>) 
-        : 
-        (<div className="grid gap-4 md:grid-cols-2">
-          {reports.map((report) => (
-            <div key={report._id} className="bg-white p-5 rounded-lg shadow-md border-l-4 border-red-500">
-              <div className="flex justify-between items-start">
-                <h2 className="text-xl font-semibold">{report.title}</h2>
-                <span className="text-xs bg-gray-200 px-2 py-1 rounded text-gray-700">
-                  {report.category}
-                </span>
-              </div>
-              
-              <p className="text-gray-600 mt-2 text-sm line-clamp-3">
-                {report.description}
-              </p>
+        <p className="text-gray-500 text-center">No reports found yet.</p>
+      ) : 
+      (
+        <>
+          <div className="mb-4">
+            <label htmlFor="my-dropdown" className="font-medium mr-2">Filter Based on Category: </label>
+            
+            <select 
+              id="my-dropdown" 
+              className="border p-2 rounded"
+              value={category} 
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              {categories.map((category, index) => (
+                <option key={index} value={category}>{category}</option>
+              ))}
+            </select>
+          </div>
 
-              <div className="mt-4 text-xs text-gray-500 space-y-1">
-                <p>{report.location?.address || "Location unavailable"}</p>
-                <p>{new Date(report.incidentDate).toLocaleString()}</p>
-                <p>{report.anonymous ? "Anonymous Report" : `Reported by: ${report.contact}`}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {filteredReports.length === 0 ? 
+            (
+              <p className="text-gray-500 col-span-2 text-center py-10">No reports found for this category.</p>
+            ) : 
+            (
+              filteredReports.map((report) => (
+                <div key={report._id} className="bg-white p-5 rounded-lg shadow-md border-l-4 border-red-500">
+                  <div className="flex justify-between items-start">
+                    <h2 className="text-xl font-semibold">{report.title}</h2>
+                    <span className="text-xs bg-gray-200 px-2 py-1 rounded text-gray-700">
+                      {report.category}
+                    </span>
+                  </div>
+                  <p className="text-gray-600 mt-2 text-sm line-clamp-3">{report.description}</p>
+                  <div className="mt-4 text-xs text-gray-500 space-y-1">
+                    <p>{report.location?.address || "Location unavailable"}</p>
+                    <p>{new Date(report.incidentDate).toLocaleString()}</p>
+                    <p>{report.anonymous ? "Anonymous Report" : `Reported by: ${report.contact}`}</p>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        </>
       )}
     </div>
-  );
+  )
 }
