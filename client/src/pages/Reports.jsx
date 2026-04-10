@@ -69,9 +69,9 @@ export default function Reports() {
             {filteredReports.length === 0 ? 
             (
               <p className="text-gray-500 col-span-2 text-center py-10">No reports found for this category.</p>
-            ) : 
-            (
-              filteredReports.map((report) => (
+            ) 
+            : 
+            (filteredReports.map((report) => (
                 <div key={report._id} className="bg-white p-5 rounded-lg shadow-md border-l-4 border-red-500">
                   <div className="flex justify-between items-start">
                     <h2 className="text-xl font-semibold">{report.title}</h2>
