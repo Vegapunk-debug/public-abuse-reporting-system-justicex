@@ -1,3 +1,5 @@
+<div align='center'>
+    
 # JusticeX: Public Abuse Reporting System
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
@@ -5,6 +7,8 @@
 ![Stack](https://img.shields.io/badge/Tech-MERN%20Stack-green)
 
 > **Bridging the gap between citizens and authorities through secure, anonymous, and verifiable incident reporting.**
+
+</div>
 
 ---
 
@@ -101,7 +105,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 
 **Project Lead:** Rohit Nair P
+<br/>
 **LinkedIn:** https://www.linkedin.com/in/rohit-nair-p-7a535b251/
+<br/>
 **Email:** rohitnairmuttathethu@gmail.com
 
-Project Link: [https://github.com/Vegapunk-debug/public-abuse-reporting-system-justiceX](https://github.com/Vegapunk-debug/public-abuse-reporting-system-justiceX)
+# Thank You !
